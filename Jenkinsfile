@@ -29,7 +29,7 @@ pipeline{
 				echo 'Completed'
 			}
 		}
-		stage('Test Results')
+		stage('Test Results'){
 
 		steps{
 
@@ -51,22 +51,5 @@ pipeline{
 			}
 		}
 
-
-
-
-
-
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 }
