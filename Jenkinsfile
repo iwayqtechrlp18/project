@@ -6,6 +6,7 @@ pipeline{
 			steps{
 
 				echo 'Completed'
+				sh '/root/apache-maven-3.5.4/bin/mvn package'
 			}
 		}
 		stage ('SonarQube Scanner'){
@@ -13,6 +14,9 @@ pipeline{
 			steps{
 
 				echo 'SonarQube is  completed'
+				withSonarQubeEnv('sonar6') {
+   sh 'mvn sonar:sonar'
+}
 			}
 		}
 		stage ('Artifactory'){
@@ -51,5 +55,22 @@ pipeline{
 			}
 		}
 
+
+
+
+
+
 	}
+
+
+
+
+
+
+
+
+
+
+
+
 }
