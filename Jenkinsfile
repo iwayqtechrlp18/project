@@ -33,6 +33,8 @@ pipeline{
  ]
 }"""
 server.upload(uploadSpec)
+def buildinfo = server.upload uploadSpec
+server.publishBuildInfo buildinfo
 }
 }
 		}
