@@ -7,7 +7,7 @@ pipeline{
 
 				echo 'Completed'
 				sh '/root/apache-maven-3.5.4/bin/mvn package'
-				archiveArtifacts '*.war'
+				archiveArtifacts 'target/*.war'
 			}
 		}
 		stage ('SonarQube Scanner'){
