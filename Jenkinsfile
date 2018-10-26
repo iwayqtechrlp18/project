@@ -15,7 +15,7 @@ pipeline{
 
 				echo 'SonarQube is  completed'
 				withSonarQubeEnv('sonar6') {
-   sh 'mvn sonar:sonar'
+   sh '/root/apache-maven-3.5.4/bin/mvn sonar:sonar'
 }
 			}
 		}
