@@ -21,8 +21,6 @@ pipeline{
 		}
 		stage ('Artifactory'){
 
-			steps{
-
 				def server = Artifactory.server jfrog
 				def uploadSpec = """{
   "files": [
@@ -32,6 +30,7 @@ pipeline{
     }
  ]
 }"""
+steps{
 server.upload(uploadSpec)
 echo 'Completed'
 			}
