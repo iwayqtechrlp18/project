@@ -1,30 +1,70 @@
-pipeline {
-	agent any
-	   stages{
-	   	stage ('stage1') {
-	   		steps {
+pipeline{
+	agent any 
+	stages{
+		stage ('Maven Build'){
 
-	   			echo 'stage1 completed'
-	   		}
+			steps{
 
-	   		
-	   	}
-	   	stage ('stage2'){
+				echo 'Completed'
+			}
+		}
+		stage ('SonarQube Scanner'){
 
-	   		steps{
+			steps{
 
-	   			input('Do you want  to proceed ?')
-	   			echo 'stage 2 completed'
-	   		}
-	   	}
-	   	stage ('stage3') {
+				echo 'SonarQube is  completed'
+			}
+		}
+		stage ('Artifactory'){
 
-	   		steps{
+			steps{
 
-	   			echo 'stage3 completed'
-	   		}
-	   	}
-	   }
+				echo 'Completed'
+			}
+		}
+		stage('Deploy to Test'){
+
+			steps{
+
+				echo 'Completed'
+			}
+		}
+		stage('Test Results')
+
+		steps{
+
+			echo 'Completed'
+		}
+		}
+		stage('Approvals'){
+
+			steps{
+
+				input('Do you want  to proceed?')
+			}
+		}
+		stage('Deploy to Production'){
+
+			steps{
+
+				echo 'completed'
+			}
+		}
+
+
+
+
+
+
+	}
+
+
+
+
+
+
+
+
 
 
 
