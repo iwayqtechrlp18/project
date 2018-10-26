@@ -3,15 +3,15 @@ pipeline {
 	   stages{
 	   	stage ('stage1') {
 
-	   		echo "Stage 1  completed"
+	   		echo 'stage1 completed'
 	   	}
 	   	stage ('stage2'){
 
-	   		echo "Stage2 completed"
+	   		echo 'stage 2 completed'
 	   	}
 	   	stage ('stage3') {
 
-	   		echo "Stage3 Completed"
+	   		echo 'stage3 completed'
 	   	}
 	   }
 
