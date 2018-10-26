@@ -20,6 +20,7 @@ pipeline{
 			}
 		}
 		stage ('Artifactory'){
+			steps{
 
 				def server = Artifactory.server jfrog
 				def uploadSpec = """{
@@ -30,7 +31,8 @@ pipeline{
     }
  ]
 }"""
-server.upload(uploadSpec)
+server.upload spec: uploadSpec
+}
 		}
 		stage('Deploy to Test'){
 
