@@ -27,8 +27,8 @@ pipeline{
 				def uploadSpec = """{
   "files": [
     {
-      "pattern": "*.war",
-      "target": "target/"
+      "pattern": "target/*.war",
+      "target": "libs-release"
     }
  ]
 }"""
