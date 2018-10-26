@@ -23,7 +23,18 @@ pipeline{
 
 			steps{
 
-				echo 'Completed'
+				artifactoryUpload('jfrog'){
+					def uploadSpec = """{
+  "files": [
+    {
+      "pattern": "*.war",
+      "target": "target/"
+    }
+ ]
+}"""
+server.upload(uploadSpec)
+}
+echo 'Completed'
 			}
 		}
 		stage('Deploy to Test'){
