@@ -26,14 +26,11 @@ pipeline{
   "files": [
     {
       "pattern": "*.war",
-      "target": "target"
+      "target": "target/"
     }
  ]
 }"""
-steps{
 server.upload(uploadSpec)
-echo 'Completed'
-			}
 		}
 		stage('Deploy to Test'){
 
